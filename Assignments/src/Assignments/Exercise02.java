@@ -1,8 +1,6 @@
 package Assignments;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 
@@ -33,7 +31,6 @@ public static void main(String[] args) throws IOException
 	}
 	System.out.println("Enter the count of numbers");
 	countOfNumbers=scan.nextInt();
-	BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 	int count=0;
 	temp=scan.next();
 	
@@ -107,8 +104,6 @@ class Adder
 		try{
 			
 		Integer result=Integer.parseInt(value1,radix) - Integer.parseInt(value2,radix);
-		
-		//System.out.println(Integer.parseInt(value1,radix));
 		System.out.println(result);
 		return result.toString();
 		
