@@ -1,0 +1,90 @@
+package exercise03;
+
+import java.awt.List;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Exercise03 {
+	
+	public static ArrayList listDetails(File file, ArrayList list)
+	{
+		for(File f: file.listFiles())
+		{
+		if(f.isDirectory())
+		{
+			list.add(f.getAbsolutePath());
+			listDetails(f,list);
+		}
+		else
+		{
+		list.add(f.getAbsolutePath());	
+		}
+		}
+		
+		return list;
+		
+	}
+	public static ArrayList executeExercise03(Folder folder)
+	{
+		//File sourceDirectory= new File("C:/Users/vjnanendra/Desktop/directory1");	
+		//File destinationDirectory=new File("C:/Users/vjnanendra/Desktop/directory2");
+		
+		File sourceDirectory=folder.getSource();
+		File destinationDirectory=folder.getDestination();
+		folder.copyFolder(sourceDirectory,destinationDirectory);
+		long start=System.currentTimeMillis();
+		long end=start+100;
+		while(System.currentTimeMillis()<end)
+		{
+			
+		}
+		ArrayList<String> listOfFiles=new ArrayList<>();
+		return listOfFiles=listDetails(destinationDirectory,listOfFiles);
+		
+		
+	}
+	public static void output(ArrayList listOfFiles,File resultFile)
+	{
+		Storage storage=new Storage();
+		storage.storeInFile(listOfFiles,resultFile);
+	}
+ 
+	public static void main(String[] args)
+	{
+		System.out.println("Enter the number of times you want to enter the input- Max 10");
+		Scanner scan=new Scanner(System.in);
+		int numberOfTimes;
+		do
+		{
+			numberOfTimes=scan.nextInt();
+			System.out.println("maximum limit 10");
+		}while(numberOfTimes>10);
+		for(int count=0;count<numberOfTimes;count++)
+		{
+		Folder folder=new Folder();
+		folder.input();
+		
+		MyThread thread=new MyThread(folder);
+		thread.start();
+		}
+		 
+	}
+
+}

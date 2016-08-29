@@ -1,0 +1,16 @@
+package exercise03;
+
+import java.io.File;
+
+public class Exercise03 {
+	public static void main(String[] args)
+	{
+		File sourceDirectory= new File("C:/Users/vjnanendra/Desktop/directory1");	
+		File destinationDirectory=new File("C:/Users/vjnanendra/Desktop/directory2");
+		for(String file:sourceDirectory.list())
+		{
+			System.out.println(file);
+		}
+	}
+
+}

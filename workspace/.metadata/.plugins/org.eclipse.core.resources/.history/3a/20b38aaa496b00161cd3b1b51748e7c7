@@ -1,0 +1,43 @@
+package exercise03;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
+
+public class Storage {
+	public static void storeInFile(ArrayList<String>listOfFiles, File resultFile)
+	{
+	try
+	{
+	FileWriter writer = new FileWriter(resultFile, true);
+    writer.write("filename                                         size\r\n");
+    writer.write("----------------------------------------------------------------\r\n");
+    writer.flush();
+    writer.close();
+	}
+	catch(Exception e)
+	{
+		System.out.println(e);
+	}
+	for(int i=0;i<listOfFiles.size();i++) {
+	    
+	  
+	    try{
+	    	
+	    FileWriter writer = new FileWriter(resultFile, true);
+	    File file=new File(listOfFiles.get(i));
+	    writer.write(file.getAbsolutePath()+"          "+file.length()+"bytes"+"\r\n");
+	    writer.flush();
+	    writer.close();
+	    
+	    }
+	    catch(Exception e)
+	    {
+	    	System.out.println(e);
+	    }
+
+	}
+
+	}
+
+}

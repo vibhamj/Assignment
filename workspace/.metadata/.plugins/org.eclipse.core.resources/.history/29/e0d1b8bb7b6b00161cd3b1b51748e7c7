@@ -1,0 +1,30 @@
+package exercise;
+
+import java.util.Scanner;
+
+import exercise01.Exercise01;
+import exercise02.Exercise02;
+import exercise03.Exercise03;
+
+public class Assignment {
+ public static void main(String[] a)
+ {
+	 System.out.println("Enter the exercise number");
+		Scanner scan=new Scanner(System.in);
+		int choice=scan.nextInt();
+		Exercise exercise = null;
+		switch(choice)
+		{
+		case 1: Exercise01 e1= new Exercise01();
+		break;
+		case 2: Exercise02 e2= new Exercise02();
+		break;
+		case 3: Exercise03 e3= new Exercise03();
+		break;
+		default: System.out.println("currently only 3 exercises");
+			
+		}
+		
+		
+ }
+}

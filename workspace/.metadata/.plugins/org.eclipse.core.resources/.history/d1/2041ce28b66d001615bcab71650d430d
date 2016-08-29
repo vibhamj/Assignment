@@ -1,0 +1,27 @@
+package exercise03;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class MyThread extends Thread {
+	Folder folder=new Folder();
+	MyThread()
+	{
+		//this.folder=folder;
+	}
+	
+	public void run()
+	{
+	String[] list;
+	Exercise03 e03=new Exercise03(folder);
+	e03.execute();
+
+	try {
+		e03.writeOutput();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
+	
+}
