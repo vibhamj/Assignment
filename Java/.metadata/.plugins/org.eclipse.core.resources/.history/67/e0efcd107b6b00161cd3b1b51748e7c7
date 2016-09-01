@@ -1,0 +1,46 @@
+package exercise01;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+import exercise.Exercise;
+
+public class Exercise01 extends Exercise {
+	public Exercise01() throws FileNotFoundException, IOException {
+
+	}
+
+	@Override
+	public void getInput() {
+		Input input = new Input();
+		if (isFound(input.lineOfText, input.substring))
+			System.out.println("Found substring");
+		else
+			System.out.println("Did not find substring");
+	}
+
+	public void execute(){
+		public static boolean isFound(String lineOfText, String substring) {
+			int i, j = 0;
+			// iterate through the line of text
+			while (j <= lineOfText.length() - substring.length()) {
+				// iterate through the substring
+				for (i = 0; i < substring.length(); i++) {
+					if (lineOfText.charAt(i + j) != substring.charAt(i)) {
+						break;
+					}
+
+					else
+						return true;
+				}
+				j++;
+			}
+			return false;
+		}
+	}
+
+}

@@ -1,0 +1,28 @@
+package exercise;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
+import exercise01.*;
+import exercise02.*;
+import exercise03.*;
+
+public class Exercise {
+public static void main(String[] args) throws FileNotFoundException, IOException
+{
+	System.out.println("Enter the exercise number");
+	Scanner scan=new Scanner(System.in);
+	int choice=scan.nextInt();
+	switch(choice)
+	{
+	case 1: Exercise01 e1= new Exercise01();
+	break;
+	case 2: Exercise02 e2= new Exercise02();
+	break;
+	case 3: Exercise03 e3= new Exercise03();
+	break;
+	default: System.out.println("currently only 3 exercises");
+		
+	}
+}
+}

@@ -1,0 +1,24 @@
+package exercise03;
+
+import java.util.ArrayList;
+
+public class MyThread extends Thread {
+	Folder folder=new Folder();
+	MyThread()
+	{
+		
+	}
+	MyThread(folder)
+	{
+		this.folder=folder;
+	}
+	
+	public void run()
+	{
+	ArrayList<String> list=new ArrayList<>();
+	list=executeExercise03(folder);
+	
+	output(list,folder);
+	}
+	
+}

@@ -1,0 +1,29 @@
+package exercise;
+
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.util.Scanner;
+
+import exercise01.*;
+import exercise02.*;
+import exercise03.*;
+
+public class Exercise {
+
+	public void getInput() throws Exception {
+
+	}
+
+	public void execute() {
+
+	}
+
+	public void writeOutput(OutputStream type, String... args) {
+		BufferedWriter log = new BufferedWriter(new OutputStreamWriter(type));
+
+	}
+	
+}
